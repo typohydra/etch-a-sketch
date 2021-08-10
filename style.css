@@ -21,7 +21,7 @@
 
 .block { 
     flex-grow: 1;
-    border: solid rgb(253, 0, 0); 
+    border: solid rgb(250, 0, 0); 
     border-width: 0 1px 1px 0;
     box-sizing: border-box;
 }
