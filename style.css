@@ -11,6 +11,8 @@
     border: solid;
     display: flex;
     flex-wrap: wrap;
+
+    border-radius: 5px;
 }
 
 .row {
@@ -21,7 +23,10 @@
 
 .block { 
     flex-grow: 1;
-    border: solid rgb(250, 0, 0); 
+    border: solid rgb(228, 224, 224); 
     border-width: 0 1px 1px 0;
     box-sizing: border-box;
+
+    border-radius: 5px;
 }
+
