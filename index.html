@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="controls">
+        <button id="clear-btn">clear</button>
+        <button id="eraser-btn">eraser</button>
+        <label for="color-input">color</label>
+        <input type="color" id="color-input">
+        <div id="grid-size-container">
+            <label for="grid-size"></label>
+            <input type="range" min="2" max="100" value="40" id="grid-size">
+            <button id="grid-size-btn">apply</button>
+        </div>
+    </div>
     <div id="canvas"></div>
     <script src="main.js"></script>
 </body>
