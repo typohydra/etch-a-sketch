@@ -37,7 +37,7 @@ document.querySelector('#grid-size-btn').addEventListener('click', () => {
 const clearBtn = document.querySelector('#clear-btn');
 clearBtn.addEventListener('click', () => {
     blocks.forEach(block => {
-        block.style.cssText = "background-color: white;";
+        block.style.cssText = "background-color: whitesmoke;";
     });
 });
 
@@ -45,9 +45,12 @@ clearBtn.addEventListener('click', () => {
     change paint color
 */
 const colorBtn = document.querySelector('#color-input');
+const controlsBackground = document.querySelector('#controls');
 let paintColor = colorBtn.value;
+controlsBackground.style.cssText = `background: linear-gradient(45deg, #424ed6, ${paintColor})`;
 colorBtn.addEventListener('input', () => {
     paintColor = colorBtn.value;
+    controlsBackground.style.cssText = `background: linear-gradient(45deg, #424ed6, ${paintColor})`;
 });
 
 /*
@@ -59,11 +62,13 @@ eraserBtn.addEventListener('click', () => {
     if(isEraserOn === false)
     {
         isEraserOn = true;
-        paintColor = "white";
+        paintColor = "whitesmoke";
+        eraserBtn.style.cssText = "background-color: #424ed6";
     }
     else {
         isEraserOn = false;
-        paintColor = "black";
+        paintColor = colorBtn.value;
+        eraserBtn.style.cssText = "background-color: none";
     }
 });
 
