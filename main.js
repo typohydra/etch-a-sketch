@@ -1,4 +1,4 @@
-let canvasDimension = document.querySelector('#grid-size').value;// n by n
+let canvasDimension = localStorage.getItem("canvasDimension") || 40; // n by n
 const canvas = document.querySelector('#canvas');
 
 /*
@@ -21,14 +21,20 @@ for(let i=0; i<canvasDimension; i++)
 /*
     reload canvas size
 */
+let gridSizeInput = document.querySelector('#grid-size');
+gridSizeInput.value = canvasDimension;
 const canvasDimensionLabel = document.querySelector('label[for="grid-size"]');
 canvasDimensionLabel.innerText = `${canvasDimension} x ${canvasDimension}`;
-document.querySelector('#grid-size').addEventListener('input', () => {
-    canvasDimension = document.querySelector('#grid-size').value;
-    canvasDimensionLabel.innerText = `${canvasDimension} x ${canvasDimension}`;
+
+gridSizeInput.addEventListener('input', () => {
+    let canvasDimensionNew = gridSizeInput.value;
+    localStorage.setItem("canvasDimension", canvasDimensionNew);
+    canvasDimensionLabel.innerText = `${canvasDimensionNew} x ${canvasDimensionNew}`;
 })
 document.querySelector('#grid-size-btn').addEventListener('click', () => {
-    window.location.reload()
+    if(confirm("are you sure you want to reload this window?")) {
+        window.location.reload()
+    }
 })
 
 /*
